@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2] - 2026-04-07
+
+### Changed
+
+- `fix` subcommand now removes empty entries by default
+- Added `--empty` flag to remove empty entries only
+
 ## [0.1.1] - 2026-04-06
 
 ### Added
