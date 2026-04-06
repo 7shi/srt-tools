@@ -74,10 +74,11 @@ srt-tools atempo input.srt -o output.srt -t 1.25
 
 ### fix
 
-Merge consecutive duplicate phrases and/or fill gaps between entries.
+Remove empty entries, merge consecutive duplicate phrases, and/or fill gaps between entries.
 
 ```
 srt-tools fix *.srt
+srt-tools fix *.srt --empty       # remove empty entries only
 srt-tools fix *.srt --merge       # merge only
 srt-tools fix *.srt --fill        # fill gaps only
 srt-tools fix *.srt --dry-run     # preview changes without writing

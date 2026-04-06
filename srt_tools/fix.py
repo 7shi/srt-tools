@@ -3,6 +3,11 @@
 from .core import Srt
 
 
+def remove_empty(srt):
+    filtered = [e for e in srt.entries if e.text.strip()]
+    return Srt(filtered)
+
+
 def merge_repeats(srt):
     if not srt.entries:
         return srt
@@ -31,18 +36,28 @@ def setup_parser(subparsers):
     p.add_argument('files', nargs='+', help='SRT files to process')
     p.add_argument('--merge', action='store_true', help='Only merge repeated phrases')
     p.add_argument('--fill', action='store_true', help='Only fill gaps')
+    p.add_argument('--empty', action='store_true', help='Only remove empty entries')
     p.add_argument('--max-gap', type=int, default=1000, help='Max gap in ms (default: 1000)')
     p.add_argument('--dry-run', action='store_true', help='Show changes without writing')
     p.set_defaults(func=do_command)
 
 
 def do_command(args):
-    do_merge = not args.fill or args.merge
-    do_fill = not args.merge or args.fill
+    any_flag = args.merge or args.fill or args.empty
+    do_empty = args.empty or not any_flag
+    do_merge = args.merge or not any_flag
+    do_fill = args.fill or not any_flag
 
     for path in args.files:
         srt = Srt.read(path)
         changes = []
+
+        if do_empty:
+            before = len(srt.entries)
+            srt = remove_empty(srt)
+            after = len(srt.entries)
+            if before != after:
+                changes.append(f"removed {before - after} empty")
 
         if do_merge:
             before = len(srt.entries)
