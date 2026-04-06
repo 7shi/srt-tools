@@ -1,0 +1,21 @@
+# Changelog
+
+## [0.1.1] - 2026-04-06
+
+### Added
+
+- `bom` subcommand to add or remove BOM from files
+
+## [0.1.0] - 2026-04-06
+
+Initial release.
+
+### Features
+
+- `insert` — insert a subtitle entry at a specified time
+- `sync` — copy timestamps from a source SRT file to target files
+- `convert` — convert SRT files to aligned text
+- `atempo` — adjust timestamps by a tempo factor
+- `fix` — merge consecutive duplicate phrases and fill gaps
+- `truncate` — truncate timestamps to whole seconds
+- Library API: `Srt`, `SrtEntry`, `read_text`, `write_text`
