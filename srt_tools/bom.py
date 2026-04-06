@@ -39,4 +39,8 @@ def setup_parser(subparsers):
     parser = subparsers.add_parser('bom', help='Add or remove BOM from files')
     parser.add_argument('files', nargs='+', type=Path, metavar='FILE')
     parser.add_argument('--remove', action='store_true', help='Remove BOM instead of adding')
-    parser.set_defaults(func=lambda args: (remove_bom if args.remove else add_bom)(args.files))
+    parser.set_defaults(func=do_command)
+
+
+def do_command(args):
+    (remove_bom if args.remove else add_bom)(args.files)

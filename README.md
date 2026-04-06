@@ -85,6 +85,15 @@ srt-tools fix *.srt --dry-run     # preview changes without writing
 srt-tools fix *.srt --max-gap 500 # set maximum gap in ms
 ```
 
+### merge
+
+Merge SRT files into a single Markdown file with timestamps.
+
+```
+srt-tools merge *.srt
+srt-tools merge *.srt -o output.md
+```
+
 ### truncate
 
 Truncate SRT timestamps to whole seconds (floor milliseconds to 000).
