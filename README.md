@@ -26,6 +26,15 @@ uv sync
 uv run srt-tools <subcommand> [options]
 ```
 
+### bom
+
+Add or remove BOM from files.
+
+```
+uv run srt-tools bom a.txt b.txt
+uv run srt-tools bom --remove a.txt b.txt
+```
+
 ### insert
 
 Insert a subtitle entry at a specified time in an SRT file.
