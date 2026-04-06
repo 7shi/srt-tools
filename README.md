@@ -23,7 +23,7 @@ uv sync
 ## Commands
 
 ```
-uv run srt-tools <subcommand> [options]
+srt-tools <subcommand> [options]
 ```
 
 ### bom
@@ -31,8 +31,8 @@ uv run srt-tools <subcommand> [options]
 Add or remove BOM from files.
 
 ```
-uv run srt-tools bom a.txt b.txt
-uv run srt-tools bom --remove a.txt b.txt
+srt-tools bom a.txt b.txt
+srt-tools bom --remove a.txt b.txt
 ```
 
 ### insert
@@ -40,7 +40,7 @@ uv run srt-tools bom --remove a.txt b.txt
 Insert a subtitle entry at a specified time in an SRT file.
 
 ```
-uv run srt-tools insert song.kn.srt 1:02 "ಇದು ಮಾಡಿದೆ!"
+srt-tools insert song.kn.srt 1:02 "ಇದು ಮಾಡಿದೆ!"
 ```
 
 Time formats: `M:SS`, `MM:SS`, `H:MM:SS`, `HH:MM:SS,mmm`
@@ -50,7 +50,7 @@ Time formats: `M:SS`, `MM:SS`, `H:MM:SS`, `HH:MM:SS,mmm`
 Copy timestamps from a source SRT file to one or more target SRT files.
 
 ```
-uv run srt-tools sync source.kn.srt target.ja.srt target.en.srt
+srt-tools sync source.kn.srt target.ja.srt target.en.srt
 ```
 
 ### convert
@@ -58,8 +58,8 @@ uv run srt-tools sync source.kn.srt target.ja.srt target.en.srt
 Convert SRT files to aligned text. Output format is determined by the file extension (currently only `.txt` is supported).
 
 ```
-uv run srt-tools convert song.kn.srt -l ja
-uv run srt-tools convert song.kn.srt -l ja -o output.txt
+srt-tools convert song.kn.srt -l ja
+srt-tools convert song.kn.srt -l ja -o output.txt
 ```
 
 The language code is detected from the input filename. If a `-latin.srt` (romanized) file exists, it is included in the output.
@@ -69,7 +69,7 @@ The language code is detected from the input filename. If a `-latin.srt` (romani
 Adjust SRT timestamps by a tempo factor.
 
 ```
-uv run srt-tools atempo input.srt -o output.srt -t 1.25
+srt-tools atempo input.srt -o output.srt -t 1.25
 ```
 
 ### fix
@@ -77,11 +77,11 @@ uv run srt-tools atempo input.srt -o output.srt -t 1.25
 Merge consecutive duplicate phrases and/or fill gaps between entries.
 
 ```
-uv run srt-tools fix *.srt
-uv run srt-tools fix *.srt --merge       # merge only
-uv run srt-tools fix *.srt --fill        # fill gaps only
-uv run srt-tools fix *.srt --dry-run     # preview changes without writing
-uv run srt-tools fix *.srt --max-gap 500 # set maximum gap in ms
+srt-tools fix *.srt
+srt-tools fix *.srt --merge       # merge only
+srt-tools fix *.srt --fill        # fill gaps only
+srt-tools fix *.srt --dry-run     # preview changes without writing
+srt-tools fix *.srt --max-gap 500 # set maximum gap in ms
 ```
 
 ### truncate
@@ -89,8 +89,8 @@ uv run srt-tools fix *.srt --max-gap 500 # set maximum gap in ms
 Truncate SRT timestamps to whole seconds (floor milliseconds to 000).
 
 ```
-uv run srt-tools truncate *.srt
-uv run srt-tools truncate input.srt -o output.srt
+srt-tools truncate *.srt
+srt-tools truncate input.srt -o output.srt
 ```
 
 ## Library
