@@ -1,0 +1,18 @@
+[project]
+name = "srt-tools"
+version = "0.1.0"
+description = "SRT subtitle file manipulation tools"
+readme = "README.md"
+repository = "https://github.com/7shi/srt-tools"
+requires-python = ">=3.10"
+dependencies = []
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["srt_tools"]
+
+[project.scripts]
+srt-tools = "srt_tools.__main__:main"
