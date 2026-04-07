@@ -1,7 +1,7 @@
 """srt-tools: SRT subtitle tools"""
 
 import argparse
-from . import __version__, bom, insert, sync, converter, atempo, fix, truncate, merge
+from . import __version__, bom, insert, sync, converter, atempo, fix, truncate, merge, offset
 
 
 def main():
@@ -9,7 +9,7 @@ def main():
     parser.add_argument('--version', action='version', version=f'%(prog)s {__version__}')
     subparsers = parser.add_subparsers(dest='command', required=True)
 
-    for mod in [bom, insert, sync, converter, atempo, fix, truncate, merge]:
+    for mod in [bom, insert, sync, converter, atempo, fix, truncate, merge, offset]:
         mod.setup_parser(subparsers)
 
     args = parser.parse_args()

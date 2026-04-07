@@ -85,6 +85,19 @@ srt-tools fix *.srt --dry-run     # preview changes without writing
 srt-tools fix *.srt --max-gap 500 # set maximum gap in ms
 ```
 
+### offset
+
+Shift all timestamps by a fixed time offset.
+
+```
+srt-tools offset a.srt 0:02
+srt-tools offset a.srt +0:02
+srt-tools offset a.srt -0:02
+srt-tools offset a.srt b.srt 0:02
+```
+
+Time formats: `M:SS`, `MM:SS`, `H:MM:SS`, `HH:MM:SS,mmm`
+
 ### merge
 
 Merge SRT files into a single Markdown file with timestamps.
