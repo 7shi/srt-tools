@@ -1,6 +1,6 @@
 [project]
 name = "srt-tools"
-version = "0.1.3"
+version = "0.1.4"
 description = "SRT subtitle file manipulation tools"
 readme = "README.md"
 repository = "https://github.com/7shi/srt-tools"

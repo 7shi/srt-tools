@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.4] - 2026-04-07
+
+### Added
+
+- `offset` subcommand to shift all SRT timestamps by a fixed time offset
+- `concat` subcommand to concatenate SRT files with video duration offsets
+
 ## [0.1.3] - 2026-04-07
 
 ### Added
