@@ -98,6 +98,19 @@ srt-tools offset a.srt b.srt 0:02
 
 Time formats: `M:SS`, `MM:SS`, `H:MM:SS`, `HH:MM:SS,mmm`
 
+### concat
+
+Concatenate multiple SRT files, shifting timestamps by video durations.
+
+```
+srt-tools concat a.srt 10:00 b.srt 8:30 c.srt
+srt-tools concat a.srt 10:00 b.srt -o output.srt
+```
+
+Arguments alternate between SRT files and video durations. Each duration specifies the total length of the preceding video, so the next file's timestamps are shifted accordingly.
+
+Time formats: `M:SS`, `MM:SS`, `H:MM:SS`, `HH:MM:SS,mmm`
+
 ### merge
 
 Merge SRT files into a single Markdown file with timestamps.
