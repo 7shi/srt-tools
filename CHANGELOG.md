@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.5] - 2026-04-16
+
+### Added
+
+- `--overlap` flag to `fix` subcommand to fix overlapping timestamps only
+- `fix` subcommand now fixes overlapping timestamps by default
+
 ## [0.1.4] - 2026-04-07
 
 ### Added
